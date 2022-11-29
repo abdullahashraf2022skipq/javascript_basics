@@ -13,14 +13,14 @@ const writeData = (notes) => {
 }
 
 
-const addNote = (title, body) => {
+const addNote = (title, author) => {
     const notes = get_data()
     const duplicateNotes = notes.filter((note) => note.title === title)
 
     if (duplicateNotes.length === 0) {
         notes.push({
             title: title,
-            body: body
+            author: author
         })
     } else {
         console.log("Note title taken!")
@@ -28,4 +28,38 @@ const addNote = (title, body) => {
     writeData(notes)
 }
 
-addNote("My title", "My body")
+const displayNotes = () => {
+    const notes = get_data()
+    notes.forEach((note) => {
+        console.log(note.title, "\tBy:", note.author)
+        // console.log(note.author)
+    })
+}
+
+const displayAuthor = (title) => {
+    const notes = get_data()
+    const note = notes.find((note) => note.title === title)
+    if (note) {
+        console.log(note.author)
+    } else {
+        console.log("Note not found!")
+    }
+}
+
+const removeNote = (title) => {
+    const notes = get_data()
+    const notesToKeep = notes.filter((note) => note.title !== title)
+    if (notes.length > notesToKeep.length) {
+        console.log("Note removed!")
+        writeData(notesToKeep)
+    } else {
+        console.log("No note found!")
+    }
+}
+
+addNote("My title", "My author")
+displayNotes()
+console.log("----------------------------")
+removeNote("My title")
+console.log("----------------------------")
+displayNotes()

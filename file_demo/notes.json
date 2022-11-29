@@ -1,14 +1,1 @@
-[
-    {
-        "title": "Automate the boring stuff with Python",
-        "author": "Al"
-    },
-    {
-        "title": "Harry Potter",
-        "author": "JK Rowling"
-    },
-    {
-        "title": "The Hitchhiker's Guide to the Galaxy",
-        "author": "Douglas Adams"
-    }
-]
+[{"title":"Automate the boring stuff with Python","author":"Al"},{"title":"Harry Potter","author":"JK Rowling"},{"title":"The Hitchhiker's Guide to the Galaxy","author":"Douglas Adams"}]
